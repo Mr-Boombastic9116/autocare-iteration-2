@@ -1,97 +1,107 @@
-# AutoCare — Vehicle Management & Service Booking
+# AutoCare – Vehicle Service Management System
 
-A PHP + MySQL vehicle management and service booking system. Add your
-vehicles, track their health/service status, and book a service slot
-with real-time slot availability.
+AutoCare is a web-based vehicle service management and booking system built using PHP and MySQL.
 
-## Requirements
+The application allows users to register and log in, manage their vehicles, book vehicle service appointments, select available time slots, and view their bookings through an interactive web interface.
 
-- XAMPP (Apache + MySQL/MariaDB + PHP 8.x)
-- phpMyAdmin (bundled with XAMPP)
+The system uses AJAX for dynamic interactions and MySQL for storing and managing user, vehicle, service, and booking information.
 
-No Composer, Node.js, or external frameworks are required — this runs
-as plain PHP on Apache.
+---
 
-## Installation
+## Features
 
-1. Copy the `autocare-main` folder into your XAMPP `htdocs/` directory, e.g.:
-   ```
-   C:\xampp\htdocs\autocare-main\      (Windows)
-   /Applications/XAMPP/htdocs/autocare-main/   (macOS)
-   /opt/lampp/htdocs/autocare-main/    (Linux)
-   ```
+### User Authentication
 
-2. Start **Apache** and **MySQL** from the XAMPP control panel.
+- User registration
+- User login and logout
+- Session management
+- Protected pages for authenticated users
 
-3. Open phpMyAdmin: `http://localhost/phpmyadmin`
+### Vehicle Management
 
-4. Create a new database named exactly:
-   ```
-   autocare
-   ```
+- Add vehicles
+- View registered vehicles
+- View vehicle details
+- Manage multiple vehicles under a user account
 
-5. Select the `autocare` database, go to **Import**, and import:
-   ```
-   databases/autocare_final.sql
-   ```
-   This is the single, consolidated database file — it contains the
-   full schema (users, vehicles, bookings, companies, models, years,
-   fuels, variants) plus starter demo data. The two older SQL dumps
-   (`autocare old.sql`, `autocare updated.sql`) are kept in the same
-   folder only for reference; you do **not** need to import them.
+### Service Booking
 
-6. Open the app in your browser:
-   ```
-   http://localhost/autocare-main/
-   ```
+- Select a vehicle for servicing
+- Choose a service date
+- View available time slots dynamically
+- Book a vehicle service appointment
+- Booking confirmation
 
-## Default / demo login
+### Dynamic Functionality
 
-The imported database includes one demo account:
+- AJAX-based dynamic data loading
+- Dynamic vehicle information selection
+- Available service slot handling
+- Interactive booking process
 
-- **Username:** `admin`
-- **Password:** `Admin@123`
+---
 
-You can also sign up a brand-new account from the Signup page — new
-accounts start with zero vehicles and zero bookings.
+## Technologies Used
 
-## Database connection
+- **PHP** – Backend development
+- **MySQL** – Database management
+- **HTML5** – Website structure
+- **CSS3** – Styling and layout
+- **JavaScript** – Client-side functionality
+- **AJAX** – Dynamic interactions and data loading
+- **Python** – Image processing and utility scripts
+- **XAMPP** – Local development environment
 
-`includes/db.php` connects using the standard local XAMPP defaults:
+---
 
-```php
-new mysqli("localhost", "root", "", "autocare");
-```
+## Project Structure
 
-If your local MySQL root user has a password set, update that one
-file only.
-
-## What's in this build
-
-- **Per-user vehicles** — every user only ever sees and manages their
-  own vehicles; there is no shared/hardcoded vehicle data.
-- **Real booking flow** — Login → My Vehicles → Vehicle Details →
-  Book Service → Date → Time → Services → Confirmation, all tied to
-  the vehicle you actually selected.
-- **Server-verified slot availability** — the same date/time slot can
-  never be double-booked, checked both in the booking transaction and
-  at the database level (`UNIQUE(service_date, time_slot)`).
-- **Ownership checks everywhere** — vehicle details, booking, and
-  confirmation pages all verify server-side that the record belongs
-  to the logged-in user before showing anything.
-- **Prepared statements throughout** — login, signup, vehicle
-  creation, booking, and every AJAX lookup use parameterized queries.
-- **My Bookings** — a booking history page, plus a small dashboard
-  summary (vehicle count, upcoming services, next service date) on
-  the vehicles page.
-
-## Notes on demo/estimated data
-
-- The "Nearest Service Center" panel on the booking page shows one
-  fixed, featured demo service center (Alcon Hyundai - Margao) — it
-  is not live GPS data.
-- Vehicle Health / Service Status figures on the vehicle details page
-  are calculated from the KMs and dates you enter (not real sensor
-  data), and are clearly framed as estimates/insights.
-- The "Redirecting to Payment Gateway" step is a UI simulation only —
-  no real payment processor is integrated.
+```text
+autocare-iteration-2/
+│
+├── ajax/
+│   ├── get_fuels.php
+│   ├── get_models.php
+│   ├── get_slots.php
+│   ├── get_variants.php
+│   ├── get_years.php
+│   └── save_booking.php
+│
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   ├── images_backup/
+│   └── assets/
+│
+├── databases/
+│   ├── autocare old.sql
+│   ├── autocare updated.sql
+│   ├── autocare.sql
+│   └── autocare_final.sql
+│
+├── includes/
+│   ├── auth.php
+│   ├── db.php
+│   ├── footer.php
+│   ├── header_app.php
+│   ├── services_data.php
+│   └── vehicle_image.php
+│
+├── add_vehicle.php
+├── book_service.php
+├── bookings.php
+├── confirmation.php
+├── header_app.php
+├── home.php
+├── index.php
+├── logout.php
+├── signup.php
+├── vehicle_details.php
+├── vehicles.php
+│
+├── make_superb_vehicles.py
+├── process_all_white_bg.py
+├── process_images.py
+│
+└── README.md
