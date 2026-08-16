@@ -1,4 +1,3 @@
-[autocare-iteration-2-README.md](https://github.com/user-attachments/files/31122780/autocare-iteration-2-README.md)
 # AutoCare – Vehicle Service Management System
 
 AutoCare is a web-based vehicle service management and booking system built using PHP and MySQL.
