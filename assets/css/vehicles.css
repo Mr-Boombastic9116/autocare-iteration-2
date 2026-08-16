@@ -1,0 +1,494 @@
+/* =========================================================
+   AUTOCARE - VEHICLES PAGE
+   Clean standalone styling
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f6f8;
+    color: #17202a;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.ac-header {
+    height: 74px;
+    background: #101820;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+}
+
+.ac-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.ac-header-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.ac-bookings {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.ac-bookings:hover {
+    color: #ffc107;
+}
+
+.ac-profile-area {
+    position: relative;
+}
+
+.ac-profile {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    display: block;
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.vehicles-page {
+    width: 100%;
+    min-height: calc(100vh - 74px);
+    padding: 42px 6% 80px;
+}
+
+/* =========================================================
+   GARAGE HEADER
+   ========================================================= */
+
+.garage-header {
+    max-width: 1180px;
+    margin: 0 auto 28px;
+    background: #fff;
+    border-radius: 16px;
+    padding: 30px 34px;
+    border: 1px solid #e4e7eb;
+    box-shadow: 0 5px 18px rgba(20,30,40,0.05);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.garage-kicker {
+    margin: 0 0 6px;
+    color: #9a7300;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.garage-header h1 {
+    margin: 0;
+    color: #17202a;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.garage-header p {
+    margin: 8px 0 0;
+    color: #68727d;
+    font-size: 16px;
+}
+
+.add-vehicle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    padding: 13px 22px;
+    background: #ffc107;
+    color: #151a1e;
+    border-radius: 9px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 800;
+    transition: 0.2s ease;
+}
+
+.add-vehicle-btn:hover {
+    background: #eab000;
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   DASHBOARD SUMMARY
+   ========================================================= */
+
+.vehicle-summary {
+    max-width: 1180px;
+    margin: 0 auto 42px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.summary-card {
+    background: #fff;
+    border: 1px solid #e4e7eb;
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 5px 18px rgba(20,30,40,0.05);
+}
+
+.summary-value {
+    display: block;
+    color: #17202a;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.summary-label {
+    display: block;
+    margin-top: 9px;
+    color: #69747f;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   GARAGE TITLE
+   ========================================================= */
+
+.garage-section {
+    max-width: 1180px;
+    margin: 0 auto;
+}
+
+.garage-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.garage-section-heading h2 {
+    margin: 0;
+    color: #17202a;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.garage-count {
+    color: #69747f;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   VEHICLE GRID
+   ========================================================= */
+
+.vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+/* =========================================================
+   VEHICLE CARD
+   ========================================================= */
+
+.vehicle-card {
+    background: #fff;
+    border: 1px solid #e1e5e9;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+
+    box-shadow: 0 5px 18px rgba(20,30,40,0.06);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.vehicle-card:hover {
+    transform: translateY(-5px);
+    border-color: #d7dce1;
+    box-shadow: 0 12px 28px rgba(20,30,40,0.11);
+}
+
+/* =========================================================
+   VEHICLE IMAGE
+   ========================================================= */
+
+.vehicle-image {
+    width: 100%;
+    height: 205px;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    border-bottom: 1px solid #edf0f3;
+}
+
+.vehicle-image img {
+    width: 90%;
+    max-width: 250px;
+    height: 85%;
+    max-height: 150px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.12));
+}
+
+/* =========================================================
+   VEHICLE INFORMATION
+   ========================================================= */
+
+.vehicle-info {
+    padding: 20px 21px 21px;
+}
+
+.vehicle-type {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    color: #8d6b00;
+    background: #fff7d9;
+
+    padding: 5px 9px;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .7px;
+    text-transform: uppercase;
+}
+
+.vehicle-name {
+    margin: 0;
+    color: #17202a;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.vehicle-number {
+    margin: 6px 0 0;
+    color: #68727d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.vehicle-details {
+    margin-top: 17px;
+    padding-top: 15px;
+    border-top: 1px solid #edf0f2;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.vehicle-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.vehicle-detail-label {
+    color: #8a949d;
+    font-size: 12px;
+}
+
+.vehicle-detail-value {
+    color: #303b45;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   ADD VEHICLE CARD
+   ========================================================= */
+
+.add-card {
+    min-height: 350px;
+
+    border: 2px dashed #d6dadd;
+    background: #fafbfc;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.add-card:hover {
+    border-color: #ffc107;
+    background: #fffdf5;
+}
+
+.add-icon {
+    width: 56px;
+    height: 56px;
+
+    border-radius: 50%;
+    background: #fff5cf;
+    color: #b58900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    margin-bottom: 16px;
+}
+
+.add-card h3 {
+    margin: 0;
+    color: #26313b;
+    font-size: 18px;
+}
+
+.add-card p {
+    margin: 7px 0 0;
+    color: #7a858e;
+    font-size: 14px;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.vehicle-empty {
+    max-width: 650px;
+    margin: 30px auto;
+    background: #fff;
+    border: 1px solid #e4e7eb;
+    border-radius: 15px;
+    padding: 55px 30px;
+    text-align: center;
+}
+
+.vehicle-empty h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.vehicle-empty p {
+    margin: 0 0 20px;
+    color: #707a83;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .vehicle-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .vehicle-summary {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .vehicles-page {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .ac-header {
+        padding: 0 20px;
+    }
+
+    .ac-header-right {
+        gap: 16px;
+    }
+
+    .ac-bookings {
+        font-size: 14px;
+    }
+
+    .garage-header {
+        padding: 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .add-vehicle-btn {
+        width: 100%;
+    }
+
+    .vehicle-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .garage-section-heading {
+        align-items: flex-start;
+        gap: 10px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .vehicles-page {
+        padding: 25px 15px 60px;
+    }
+
+    .ac-brand {
+        font-size: 22px;
+    }
+
+    .ac-bookings {
+        display: none;
+    }
+
+    .garage-header h1 {
+        font-size: 25px;
+    }
+
+    .vehicle-image {
+        height: 190px;
+    }
+}
